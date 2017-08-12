@@ -7,6 +7,7 @@ import HeaderComponent from '../common/header.js'
 import '../../css/page.css'
 
 const AutoCompleteOption = AutoComplete.Option;
+const gridStyle = { width: '25%', textAlign: 'center'};
 
 export default class IndexComponent extends React.Component {
 	constructor(props) {
@@ -16,8 +17,6 @@ export default class IndexComponent extends React.Component {
 			articles: []			
 		}	
 	}
-
-	
 
 	componentDidMount() {
 		fetch('/index.json')
@@ -73,6 +72,63 @@ export default class IndexComponent extends React.Component {
 	        				)
 			        	})
 					}
+				</Card>
+
+				<Card title="Card Title" noHovering>
+				    <Card.Grid style={gridStyle}>
+				    	<div className="card-book-img">
+				    		<a href="javascript:;" ><img src={require("../../images/90.jpg")} /></a>
+				    	</div>
+				    	<div className="book-introduce">
+				    		<h2 className="title-h2">你好，影后小姐</h2>
+				    		<p>她生性高傲，而他生性冷酷，原本相互利用的两人</p>
+				    	</div>
+				    </Card.Grid>
+				    <Card.Grid style={gridStyle}>
+				    	<div className="card-book-img">
+				    		<a href="javascript:;" ><img src={require("../../images/90 (1).jpg")} /></a>
+				    	</div>
+				    	<div className="book-introduce">
+				    		<h2 className="title-h2">你好，影后小姐</h2>
+				    		<p>她生性高傲，而他生性冷酷，原本相互利用的两人</p>
+				    	</div>
+				    </Card.Grid>
+				    <Card.Grid style={gridStyle}>
+				    	<div className="card-book-img">
+				    		<a href="javascript:;" ><img src={require("../../images/90 (2).jpg")} /></a>
+				    	</div>
+				    	<div className="book-introduce">
+				    		<h2 className="title-h2">你好，影后小姐</h2>
+				    		<p>她生性高傲，而他生性冷酷，原本相互利用的两人</p>
+				    	</div>
+				    </Card.Grid>
+				    <Card.Grid style={gridStyle}>
+				    	<div className="card-book-img">
+				    		<a href="javascript:;" ><img src={require("../../images/90 (3).jpg")} /></a>
+				    	</div>
+				    	<div className="book-introduce">
+				    		<h2 className="title-h2">你好，影后小姐</h2>
+				    		<p>她生性高傲，而他生性冷酷，原本相互利用的两人</p>
+				    	</div>
+				    </Card.Grid>
+				    <Card.Grid style={gridStyle}>
+				    	<div className="card-book-img">
+				    		<a href="javascript:;" ><img src={require("../../images/90 (4).jpg")} /></a>
+				    	</div>
+				    	<div className="book-introduce">
+				    		<h2 className="title-h2">你好，影后小姐</h2>
+				    		<p>她生性高傲，而他生性冷酷，原本相互利用的两人</p>
+				    	</div>
+				    </Card.Grid>
+				    <Card.Grid style={gridStyle}>
+				    	<div className="card-book-img">
+				    		<a href="javascript:;" ><img src={require("../../images/90 (5).jpg")} /></a>
+				    	</div>
+				    	<div className="book-introduce">
+				    		<h2 className="title-h2">你好，影后小姐</h2>
+				    		<p>她生性高傲，而他生性冷酷，原本相互利用的两人</p>
+				    	</div>
+				    </Card.Grid>
 				</Card>
 
 			</div>

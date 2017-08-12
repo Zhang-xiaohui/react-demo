@@ -45,3 +45,28 @@
 	top:10px;
 	left:10px;
 }
+.ant-card-bordered{
+	margin-top:15px;
+}
+.ant-card-grid{
+	padding:10px;
+	height:200px;
+}
+.ant-card-grid .card-book-img{
+	height:180px;
+	width:120px;
+	float:left;
+	box-sizing: border-box;
+	padding-top:30px;
+}
+.ant-card-grid .book-introduce{
+	height:180px;
+	width:160px;
+	float:right;
+	padding-top:30px;
+	padding-right:40px
+}
+.ant-card-grid .book-introduce .title-h2{
+	font-size: 16px;
+	padding-bottom:10px;
+}

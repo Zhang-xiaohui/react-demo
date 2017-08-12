@@ -130,5 +130,4 @@ class HeaderComponent extends React.Component {
 	}
 }
 
-
 export default Form.create()(HeaderComponent);
