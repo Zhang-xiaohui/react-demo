@@ -3,8 +3,8 @@
 
 .main{
 	width:1280px;
-	height:60px;
 	margin:0 auto;
+	overflow:hidden;
 }
 .logo-img{
 	display: block;
@@ -92,4 +92,16 @@
 }
 .footer-menu{
 	margin:20px 0;
+}
+.data-content{
+	overflow:hidden;
+}
+.data-content-cart{
+	width:300px;
+	margin:50px;
+	float:left;
+}
+.data-content-cart img{
+	height:240px;
+	width:167px;
 }

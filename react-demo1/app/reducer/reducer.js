@@ -5,7 +5,8 @@ try{
 }catch(e){}
 
 const defaultState = {
-	login: login
+	login: login,
+	categories: []
 }
 
 export default function(state = defaultState, action) {
@@ -16,9 +17,9 @@ export default function(state = defaultState, action) {
 			localStorage.removeItem("login");
 		}catch(e){}
 
-		return {
+		return Object.assign({}, state, {
 			login: false
-		}
+		})
 	}
 
 	if(action.type == "LOGIN") {
@@ -26,12 +27,16 @@ export default function(state = defaultState, action) {
 			localStorage.login = "true"
 		}catch(e){}
 		
-		return {
+		return Object.assign({}, state, {
 			login: true
-		}
+		})
 	}
 
-	return {
-		login: state.login
+	if(action.type == "CHANGE_CATEGORIES") {		
+		return Object.assign({}, state, {
+			categories: action.values
+		})
 	}
+
+	return state
 }

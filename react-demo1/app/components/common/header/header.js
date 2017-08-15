@@ -11,7 +11,6 @@ class HeaderComponent extends React.Component {
 
 		this.state = {
 			selectedKey: "",	
-			categories: [],
 			showModal: false
 		}
 
@@ -22,21 +21,24 @@ class HeaderComponent extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log(this.props.login)
-		fetch('/categories.json')
+		if(!this.props.categories.length) {
+			fetch('/categories.json')
 			.then((response) => response.json())
 			.then((json) => {
 				
 				let categories = json.data.categories;
 				(categories.length > 10) && (categories.length = 10);
 
-		   		this.setState({
+				this.props.changeCategories(categories);
+
+		   		/*this.setState({
 		   			categories: categories
-		   		})
+		   		})*/
 			})
 			.catch((ex) => {
 				console.log('parsing failed', ex)
 			})
+		}
 	}
 
 	handleLogOut() {
@@ -78,7 +80,7 @@ class HeaderComponent extends React.Component {
 
 	render() {
 		return (
-			<HeaderUiComponent {...this.state} login={this.props.login} handleLogOut={this.handleLogOut} handleSubmit={this.handleSubmit} handleModelToggle={this.handleModelToggle} handleSelect={this.handleSelect} />
+			<HeaderUiComponent {...this.state} categories={this.props.categories} login={this.props.login} handleLogOut={this.handleLogOut} handleSubmit={this.handleSubmit} handleModelToggle={this.handleModelToggle} handleSelect={this.handleSelect} />
 		)
 	}
 }
@@ -88,11 +90,21 @@ export default connect(mapStateToProps, mapDispatchToProps)(HeaderComponent)
 //state指的就是store里面的state, 实际上是store里的数据
 //props 指的是组件里的props
 function mapStateToProps(state) {
-  return { login: state.login }
+	return { 
+		login: state.login,
+		categories: state.categories 
+	}
 }
 
 function mapDispatchToProps(dispatch) {
   return {
+  	changeCategories: function(categories) {
+  		let action = {
+  			type: "CHANGE_CATEGORIES",
+  			values: categories 
+  		}
+  		dispatch(action)
+  	},
   	handleLogout: function() {
   		let action = {
 			type: "LOGOUT"

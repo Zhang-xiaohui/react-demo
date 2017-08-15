@@ -2,12 +2,12 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import {Router, Route, browserHistory} from 'react-router'
 import IndexComponent from "./components/index/index.js"
-import DetailFirstComponent from "./components/detail/indexFirst.js"
+import DetailComponent from "./components/detail/index.js"
 import {createStore} from 'redux'
 import reducer from './reducer/reducer.js'
 import {Provider} from 'react-redux'
 
-const store = createStore(reducer);
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 class Root extends React.Component {
 	render() {
@@ -15,7 +15,7 @@ class Root extends React.Component {
 			<Provider store={store}>
 				<Router history={browserHistory}>
 					<Route path="/" component={IndexComponent}></Route>
-					<Route path="/detail/11" component={DetailFirstComponent}></Route>				
+					<Route path="/detail/:id" component={DetailComponent}></Route>				
 				</Router>
 			</Provider>
 		)

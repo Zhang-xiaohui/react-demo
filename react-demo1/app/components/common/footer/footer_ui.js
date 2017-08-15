@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-export default class FooterUiComponent extends Component {
-	render() {
 
-		let element = this.props.login ? <div>已登录</div> : <div>未登录</div>
+// 无状态组件
+export default function(props) {
+	let element = props.login ? <div>已登录</div> : <div>未登录</div>
 
 		return (
 			<div>
@@ -43,5 +43,4 @@ export default class FooterUiComponent extends Component {
 				</div>
 			</div>
 		)
-	}
 }
