@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderComponent from '../common/header.js'
+import HeaderComponent from '../common/header/header.js'
 import '../../css/detail-1.css'
 
 export default class DetailFirstComponent extends React.Component {

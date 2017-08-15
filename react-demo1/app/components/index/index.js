@@ -1,19 +1,18 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Row, Col, Menu, Icon, Button, Modal, Tabs, Form, Input, notification, Card ,Tooltip,Cascader, Select, AutoComplete,Checkbox} from 'antd'
+import { Card, Carousel } from 'antd'
 import {Link} from 'react-router'
-import HeaderComponent from '../common/header.js'
+import HeaderComponent from '../common/header/header.js'
+import FooterComponent from '../common/footer/footer.js'
 
 import '../../css/page.css'
 
-const AutoCompleteOption = AutoComplete.Option;
 const gridStyle = { width: '25%', textAlign: 'center'};
 
 export default class IndexComponent extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			categories: [],
 			articles: []			
 		}	
 	}
@@ -22,28 +21,14 @@ export default class IndexComponent extends React.Component {
 		fetch('/index.json')
 			.then((response) => response.json())
 			.then((json) => {
-				if (json.data.categories.length > 10) {
-					json.data.categories.length = 10;
-				}
+			
 				this.setState({
-					categories: json.data.categories,
-					articles: json.data.articles,
-					selectedKey: (json.data.categories[0].id + "")
+					articles: json.data.articles				
 				})
 			})
 			.catch((ex) => {
 				console.log('parsing failed', ex)
 			})
-
-			if(window.localStorage.login == "true"){
-    	    this.setState({
-    	    	login : true
-	    	    })
-	    	}else{
-	    		this.setState({
-	    	    	login : false
-	    	    })
-	    	}
 	}
 
 	render() {
@@ -51,11 +36,14 @@ export default class IndexComponent extends React.Component {
 		return (
 			<div className="main">
 
-				<HeaderComponent categories={this.state.categories}/>
+				<HeaderComponent />
 
-			    <div className="warp-placard">
-			    	<img className="placard1" src={require("../../images/0.jpg")} />
-			    </div>
+				<Carousel autoplay>
+				    <div><img className="placard1" src={require("../../images/0 (1).jpg")} /></div>
+				    <div><img className="placard1" src={require("../../images/0.jpg")} /></div>
+				    <div><img className="placard1" src={require("../../images/1501899985017119.jpg")} /></div>
+				    <div><img className="placard1" src={require("../../images/1502294951253163.jpg")} /></div>
+				</Carousel>			   
 
 			    <Card title="[公告]新秀浣水月新书火热连 [活动]福利：充值返15%" className="content" >
 				    {
@@ -74,7 +62,11 @@ export default class IndexComponent extends React.Component {
 					}
 				</Card>
 
-				<Card title="Card Title" noHovering>
+				<div className="warp-placard">
+			    	<img className="placard1" src={require("../../images/0.jpg")} />
+			    </div>
+
+				<Card title="本站新书推荐" noHovering>
 				    <Card.Grid style={gridStyle}>
 				    	<div className="card-book-img">
 				    		<a href="javascript:;" ><img src={require("../../images/90.jpg")} /></a>
@@ -131,6 +123,8 @@ export default class IndexComponent extends React.Component {
 				    </Card.Grid>
 				</Card>
 
+				<FooterComponent />
+				
 			</div>
 		)
 	}
