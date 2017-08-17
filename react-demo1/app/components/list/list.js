@@ -56,7 +56,7 @@ export default class ListComponent extends Component {
 	componentDidMount() {
 		let link = "list.json?id=" + this.props.params.id;
 
-		fetch(link)
+		fetch(link)  //此处可以在下面在再次发起请求
 			.then((response) => response.json())
 			.then((json) => {
 				let data = json.data;

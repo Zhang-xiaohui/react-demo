@@ -30,7 +30,7 @@ class HeaderUiComponent extends Component {
 			<div>
 				<Row>
 				    <Col span={4}>
-				    	<img className="logo-img" src={require("../../../images/logo.0.3.png")} />
+				    	<img className="logo-img" src={require("../../../images/logo.0.3.png")} />  
 				    </Col>
 				    <Col span={16}>
 					    <Menu mode="horizontal" className="header-menu" onSelect={this.props.hangleSelect} selectedKeys={[this.props.selectedKey]}>

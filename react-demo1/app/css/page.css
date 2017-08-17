@@ -84,11 +84,12 @@
 .footer-box{
 	text-align:center;
 	margin-top:20px;
-	background:pink;
+	background:#666;
+	padding-top:20px;
 }
 .footer-box a{
 	margin-left:20px;
-	color:#333;
+	color:#fff;
 }
 .footer-menu{
 	margin:20px 0;
