@@ -1,5 +1,6 @@
 import React, {Component} from 'react'  //相当于React.Component
 import { Row, Col, Menu, Icon, Button, Modal, Tabs, Form, Input } from 'antd'
+import {Link} from 'react-router'
 
 const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
@@ -36,8 +37,10 @@ class HeaderUiComponent extends Component {
 					        {
 					        	this.props.categories.map((value, key)=>{
 					        		return (
-					        			<Menu.Item key={value.id}>
-								            <Icon type={value.type} />{value.name}
+					        			<Menu.Item key={value.id} >
+					        				<Link to={"/list/" + value.id}>
+								            	<Icon type={value.type} />{value.name}
+							            	</Link>
 								        </Menu.Item>	
 			        				)
 					        	})

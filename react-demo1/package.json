@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --env dev",
-    "prd": "webpack-dev-server --env prd"
+    "prd": "webpack-dev-server --env prd",
+    "test": "mocha --compilers js:babel-core/register -t 5000;exit 0"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "chai": "^4.1.1",
     "css-loader": "^0.28.4",
     "fetch": "^1.1.0",
     "file-loader": "^0.11.2",

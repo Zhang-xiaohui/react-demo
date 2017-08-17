@@ -3,7 +3,6 @@ import HeaderUiComponent from './header_ui.js'
 import { notification } from 'antd'
 import {connect} from 'react-redux'
 
-
 class HeaderComponent extends React.Component {
 
 	constructor(props) {
@@ -101,7 +100,7 @@ function mapDispatchToProps(dispatch) {
   	changeCategories: function(categories) {
   		let action = {
   			type: "CHANGE_CATEGORIES",
-  			values: categories 
+  			values: categories  
   		}
   		dispatch(action)
   	},

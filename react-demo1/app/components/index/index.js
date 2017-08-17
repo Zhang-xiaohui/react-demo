@@ -51,7 +51,7 @@ export default class IndexComponent extends React.Component {
 			        		return (
 			        			<p className="content-item" key={value.id}>
 			        				<Link to={"/detail/" + value.id}>
-			        					<span className="content-item-category" style={{color:value.color}}>[{value.categoryName}]</span>
+			        					<span className="content-item-category" style={{color:value.color}}>{value.categoryName}</span>
 			        					{value.title}
 			        					({value.date})
 			        					{value.new ? <img className="content-item-new" src={require("../../images/new.gif")} /> : ""}

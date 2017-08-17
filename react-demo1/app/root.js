@@ -3,6 +3,7 @@ import ReactDom from 'react-dom'
 import {Router, Route, browserHistory} from 'react-router'
 import IndexComponent from "./components/index/index.js"
 import DetailComponent from "./components/detail/index.js"
+import ListComponent from "./components/list/list.js"
 import {createStore} from 'redux'
 import reducer from './reducer/reducer.js'
 import {Provider} from 'react-redux'
@@ -16,6 +17,7 @@ class Root extends React.Component {
 				<Router history={browserHistory}>
 					<Route path="/" component={IndexComponent}></Route>
 					<Route path="/detail/:id" component={DetailComponent}></Route>				
+					<Route path="/list/:id" component={ListComponent}></Route>				
 				</Router>
 			</Provider>
 		)

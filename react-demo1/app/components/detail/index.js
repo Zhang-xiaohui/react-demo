@@ -15,6 +15,7 @@ export default class DetailComponent extends React.Component {
 		return (
 			<div className="main">
 				<HeaderComponent />
+
 				<div className="data-content">
 				{
 					this.state.data.map((value, key)=>{
@@ -27,7 +28,8 @@ export default class DetailComponent extends React.Component {
 						)
 					})
 				}
-				</div>	
+				</div>
+				
 				<div>{this.props.params.id}</div>
 				<FooterComponent />
 			</div>
