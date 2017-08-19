@@ -76,6 +76,7 @@ const devConfig = merge([
 	commonConfig,
 	{
 		devServer: {
+			//用于页面刷新,置为false是手动刷新不好用
 			historyApiFallback: true,
 			inline: true
 		}
